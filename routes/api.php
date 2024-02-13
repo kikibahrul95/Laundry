@@ -29,3 +29,21 @@ Route::get('/user',[UserController::class,'readAll']);
 Route::get('/laundry',[LaundryController::class,'readAll']);
 
 Route::post('/register',[UserController::class,'register']);
+Route::post('/login',[UserController::class,'login']);
+
+Route::middleware('auth:sacntum')->group(
+    function()
+    {
+        Route::get('/laundry/user/{id}',[LaundryController::class,'whereUserId']);
+        Route::get('/laundry/claim',[LaundryController::class,'claim']);
+
+        Route::get('/promo/limit',[PromoController::class,'readLimit']);
+           //promo
+
+        Route::get('/shop/recomendation/limit',[ShopController::class,'readRecomendationLimit']);
+           //shops
+
+           Route::get('/shop/search/city/{name}',[ShopController::class,'searchByCity']);
+           //Pencarian
+    }
+);
