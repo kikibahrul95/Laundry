@@ -6,6 +6,7 @@ use App\Http\Controllers\Api\PromoController;
 use App\Http\Controllers\Api\ShopController;
 use App\Http\Controllers\Api\LaundryController;
 use App\Http\Controllers\Api\UserController;
+use App\Http\Controllers\api\Hash;
 
 
 /*
